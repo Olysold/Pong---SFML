@@ -21,7 +21,6 @@ void Interaction::ballMovement(sf::Clock& clock, BallEntity& ball, PaddleEntity&
         clock.restart();
     }
 
-
     if(upBounds.intersects(ball.getOverallBounds()) && !m_collide)
     {
         if(m_Ymovement > 0)
@@ -50,7 +49,7 @@ void Interaction::compMovement(sf::Clock& clock, BallEntity& ball, PaddleEntity&
     sf::Vector2f ballPos = ball.getPosition();
 
     //Paddle moving upwards
-    if(clock.getElapsedTime().asSeconds() >= 0.01 &&            //Unnecessary, see above
+    if(clock.getElapsedTime().asSeconds() >= 0.01 &&            //Unnecessary, unit movement with "stock speed" is just fine
        compPaddle.getPosition().y != 30 &&                      //Top movement limit
        ballPos.y < (midPoint.top + (midPoint.height/2)) &&      //Position of ball is above the midpoint (y is < to be "above")
        !(ballPos.y > midPoint.top && ballPos.y < (midPoint.top + midPoint.height))) //Position of ball NOT within middle bounds
@@ -60,7 +59,7 @@ void Interaction::compMovement(sf::Clock& clock, BallEntity& ball, PaddleEntity&
     }
 
     //Paddle moving downwards
-    if(clock.getElapsedTime().asSeconds() >= 0.01 &&            //Unnecessary, see above
+    if(clock.getElapsedTime().asSeconds() >= 0.01 &&            //Unnecessary, unit movement with "stock speed" is just fine
         (compPaddle.getPosition().y + 90) != 570 &&             //Bottom movement limit
        ballPos.y > (midPoint.top + (midPoint.height/2)) &&      //Position of ball is below the midpoint (y is > to be "below")
        !(ballPos.y > midPoint.top && ballPos.y < (midPoint.top + midPoint.height)) ) //Position of ball NOT within middle bounds

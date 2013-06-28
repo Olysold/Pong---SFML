@@ -77,8 +77,6 @@ int main()
         interact.hitBumper(ball, t_bumper);
         interact.hitBumper(ball, b_bumper);
 
-
-
         window.clear(sf::Color::Black);
 
         window.draw(l_paddle);

@@ -59,8 +59,6 @@ sf::FloatRect PaddleEntity::lowerBounds()
 
 }
 
-
-
 void PaddleEntity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     states.transform *= getTransform();
